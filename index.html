@@ -7,24 +7,20 @@
 </head>
 <body>
 <h1>Hello</h1>
-<h4>This is me, Febra.</h4>
+<h4>This is me, Febra</h4>
 <script>
 function getIP() {
   fetch('https://api.ipify.org?format=json')
   .then(response => response.json())
   .then(data => {
-    document.getElementById("ip").textContent   
- = data.ip;
+    document.getElementById("ip").textContent = data.ip;
   })
   .catch(error => {
-    console.error("Error:",   
- error);
+    console.error("Error:",error);
   });
 }
-
 getIP();
 </script>
-
-<p>Alamat IP Anda: <span id="ip"></span></p>
+<p>Your IP Address: <span id="ip"></span></p>
 </body>
 </html>
