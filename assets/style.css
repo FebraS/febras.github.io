@@ -14,7 +14,7 @@
     --toggle-icon: #495057;
     --footer-bg: #343a40;
     --footer-text: #f8f9fa;
-    --link-hover-color: #00b395;
+    --link-hover-color: #0a7463;
     --white: #ebebeb; 
 }
 
@@ -33,7 +33,7 @@ body.dark-mode {
     --toggle-icon: #edf2f7;
     --footer-bg: #1a202c;
     --footer-text: #e2e8f0;
-    --link-hover-color: #42e1a4;
+    --link-hover-color: #017054;
     --white: #ffffff;
 }
 
@@ -90,6 +90,7 @@ a:hover {
 
 .primary-btn:hover {
     background-color: var(--link-hover-color);
+    color: var(--white); /* Perbaikan bug*/
     border-color: var(--link-hover-color);
 }
 
