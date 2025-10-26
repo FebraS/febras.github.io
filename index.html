@@ -7,29 +7,20 @@
 
     <link rel="icon" type="image/png" href="https://febra.my.id/images/Favicon.png">
 
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Personal portfolio of Febra, a Cyber Security Enthusiast with a focus on binary exploitation. View projects and get in touch.">
     <meta name="keywords" content="Febra, Cyber Security, Binary Exploitation, Information Security, Portfolio, PyAte, ERANGA, Security Enthusiast">
     <meta name="author" content="Febra">
 
-    <!-- Open Graph (OG) Meta Tags - Untuk social media sharing -->
-    <!-- Catatan: Ganti 'febra.my.id' dengan domain Anda yang sebenarnya -->
     <meta property="og:title" content="Febra - Cyber Security Enthusiast">
     <meta property="og:description" content="Personal portfolio of Febra, a Cyber Security Enthusiast with a focus on binary exploitation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://febra.my.id/"> 
-    <meta property="og:image" content="https://febra.my.id/images/63b2c061-e71f-4511-a2fe-8b84b6fe7693.png"> <!-- URL Absolut ke gambar Anda -->
+    <meta property="og:image" content="https://febra.my.id/images/63b2c061-e71f-4511-a2fe-8b84b6fe7693.png"> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -49,18 +40,37 @@
     <header class="navbar sticky top-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm z-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
             <span class="logo text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">Febra</span>
-            <nav class="flex space-x-4 md:space-x-6 items-center">
+
+            <nav class="hidden md:flex space-x-4 md:space-x-6 items-center">
                 <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">Project</a>
                 <a href="https://blog.febra.my.id" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">Blog</a>
                 <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">About</a>
                 <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">Contact</a>
-                <button id="theme-toggle" class="theme-toggle p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle dark/light mode">
+                
+                <button class="theme-toggle p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle dark/light mode">
                     <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle mobile menu">
+                <i id="mobile-menu-icon" class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden container mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+            <nav class="flex flex-col space-y-2">
+                <a href="#projects" class="mobile-menu-link block py-2 px-3 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Project</a>
+                <a href="https://blog.febra.my.id" target="_blank" class="block py-2 px-3 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Blog</a>
+                <a href="#about" class="mobile-menu-link block py-2 px-3 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+                <a href="#contact" class="mobile-menu-link block py-2 px-3 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+                
+                <button class="theme-toggle mt-2 p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center space-x-2 w-full" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                    <span>Toggle Theme</span>
                 </button>
             </nav>
         </div>
     </header>
-
     <section class="hero-section pt-24 pb-16 md:pt-32 md:pb-24">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="hero-content flex flex-col items-center text-center">
@@ -83,15 +93,12 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="projects-section py-20 bg-gray-50 dark:bg-gray-800">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My GitHub Project</h2>
             
-            <!-- Grid container -->
             <div class="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Project Card -->
                 <a href="https://github.com/FebraS/PyAte" target="_blank" class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 block">
                     <div class="card-header flex flex-col sm:flex-row justify-between sm:items-center mb-4">
                         <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2 sm:mb-0">
@@ -111,7 +118,7 @@
                         <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2 sm:mb-0">
                             <i class="fab fa-github mr-2"></i> ERANGA
                         </h3>
-                        <span class="language bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-mono font-medium px-3 py-1 rounded-full self-start">Javascript</span>
+                        <span class="language bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-mono font-medium px-3 py-1 rounded-full self-start">JavaScript</span>
                     </div>
                     <p class="text-gray-700 dark:text-gray-300 my-4 flex-grow">A serverless online presence application built with Google Apps Script.</p>
                     <div class="card-footer flex space-x-6 text-gray-600 dark:text-gray-400 text-sm font-mono">
@@ -134,9 +141,7 @@
                     </div>
                 </a>
 
-                <!-- Add more project cards here inside the grid -->
-
-            </div>
+                </div>
             
             <div class="text-center mt-12">
                 <a href="https://github.com/FebraS" target="_blank" class="btn primary-btn inline-flex items-center py-3 px-8 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
@@ -147,7 +152,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about-section py-20">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
@@ -157,7 +161,6 @@
         </div>
     </section>
 
-    <!-- Contact CTA Section -->
     <section id="contact" class="cta-contact-section py-20 bg-blue-600 dark:bg-blue-700 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect!</h2>
@@ -169,7 +172,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-10 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl flex flex-col md:flex-row justify-between items-center">
             <p class="text-gray-600 dark:text-gray-400 mb-4 md:mb-0">&copy; 2025 Febra</p>
@@ -181,28 +183,62 @@
         </div>
     </footer>
 
-    <!-- Theme Toggle JavaScript -->
     <script>
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeIcon = themeToggleBtn.querySelector('i');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a.mobile-menu-link'); // Hanya link internal
+
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            
+
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            } else {
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-times');
+            }
+        });
+
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            });
+        });
+    </script>
+
+    <script>
+        const themeToggleBtns = document.querySelectorAll('.theme-toggle'); 
         const html = document.documentElement;
 
-        // Function to set theme
+
         function setTheme(isDark) {
+
+            const themeIcons = document.querySelectorAll('.theme-toggle i'); 
+
             if (isDark) {
                 html.classList.add('dark');
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
+                themeIcons.forEach(icon => {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                });
                 localStorage.setItem('theme', 'dark');
             } else {
                 html.classList.remove('dark');
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
+                themeIcons.forEach(icon => {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                });
                 localStorage.setItem('theme', 'light');
             }
         }
 
-        // Check for saved theme in localStorage or user preference
         const savedTheme = localStorage.getItem('theme');
         const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -212,9 +248,10 @@
             setTheme(false);
         }
 
-        // Add click event listener
-        themeToggleBtn.addEventListener('click', () => {
-            setTheme(!html.classList.contains('dark'));
+        themeToggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTheme(!html.classList.contains('dark'));
+            });
         });
     </script>
 </body>
