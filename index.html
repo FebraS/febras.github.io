@@ -1,258 +1,132 @@
 <!DOCTYPE html>
-<html lang="id" class="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Febra</title>
-
-    <link rel="icon" type="image/png" href="https://febra.my.id/images/Favicon.png">
-
-    <meta name="description" content="Personal portfolio of Febra, a Cyber Security Enthusiast with a focus on binary exploitation. View projects and get in touch.">
-    <meta name="keywords" content="Febra, Cyber Security, Binary Exploitation, Information Security, Portfolio, PyAte, ERANGA, Security Enthusiast">
-    <meta name="author" content="Febra">
-
-    <meta property="og:title" content="Febra - Cyber Security Enthusiast">
-    <meta property="og:description" content="Personal portfolio of Febra, a Cyber Security Enthusiast with a focus on binary exploitation.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://febra.my.id/"> 
-    <meta property="og:image" content="https://febra.my.id/images/63b2c061-e71f-4511-a2fe-8b84b6fe7693.png"> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>Home | Febra</title>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'], 
-                        mono: ['Roboto Mono', 'monospace'], 
-                    },
-                },
-            },
-        }
-    </script>
+    <link rel="icon" href="https://raw.githubusercontent.com/FebraS/febras.github.io/refs/heads/main/images/Favicon.png" />
+
+    <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" />
 </head>
-<body class="font-sans bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+<body class="terminal">
 
-    <header class="navbar sticky top-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm z-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-            <span class="logo text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">Febra</span>
-
-            <nav class="hidden md:flex space-x-4 md:space-x-6 items-center">
-                <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">Project</a>
-                <a href="https://blog.febra.my.id" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">Blog</a>
-                <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">About</a>
-                <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors">Contact</a>
-                
-                <button class="theme-toggle p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle dark/light mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </nav>
-
-            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle mobile menu">
-                <i id="mobile-menu-icon" class="fas fa-bars text-xl"></i>
-            </button>
-        </div>
-
-        <div id="mobile-menu" class="hidden md:hidden container mx-auto px-4 sm:px-6 lg:px-8 pb-4">
-            <nav class="flex flex-col space-y-2">
-                <a href="#projects" class="mobile-menu-link block py-2 px-3 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Project</a>
-                <a href="https://blog.febra.my.id" target="_blank" class="block py-2 px-3 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Blog</a>
-                <a href="#about" class="mobile-menu-link block py-2 px-3 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
-                <a href="#contact" class="mobile-menu-link block py-2 px-3 rounded text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
-                
-                <button class="theme-toggle mt-2 p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center space-x-2 w-full" aria-label="Toggle dark/light mode">
-                    <i class="fas fa-moon"></i>
-                    <span>Toggle Theme</span>
-                </button>
-            </nav>
-        </div>
-    </header>
-    <section class="hero-section pt-24 pb-16 md:pt-32 md:pb-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="hero-content flex flex-col items-center text-center">
-                <img 
-                    src="https://febra.my.id/images/63b2c061-e71f-4511-a2fe-8b84b6fe7693.png" 
-                    alt="My Profile Photo" 
-                    class="profile-pic w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-lg mb-6"
-                    onerror="this.onerror=null; this.src='https://placehold.co/160x160/3B82F6/FFFFFF?text=Febra'; this.alt='Foto Profil Febra';"
-                >
-                <h1 class="text-4xl md:text-6xl font-bold mb-3">Hello, I'm Febra</h1>
-                <p class="tagline text-xl md:text-2xl font-medium text-blue-600 dark:text-blue-400 mb-6">Cyber Security Enthusiast</p>
-                <p class="short-bio text-lg text-gray-700 dark:text-gray-300 max-w-xl mb-8">
-                    I am an information security enthusiast with a focus on binary exploitation.
-                </p>
-                <div class="cta-buttons flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#projects" class="btn primary-btn py-3 px-8 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300">View Projects</a>
-                    <a href="#contact" class="btn secondary-btn py-3 px-8 bg-gray-200 text-gray-800 font-semibold rounded-lg shadow-md hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 transition duration-300">Contact Me</a>
-                </div>
+    <div class="container">
+        <header class="terminal-nav">
+            <div class="terminal-logo">
+                <div class="logo terminal-prompt"><a href="#" class="no-style">febra@web:~$</a></div>
             </div>
-        </div>
-    </section>
+            <nav class="terminal-menu">
+                <ul>
+                    <li><a class="menu-item" href="#apps">./projects</a></li>
+                    <li><a class="menu-item" href="#blog">./blog_posts</a></li>
+                    <li><a class="menu-item" href="#security">./security_log</a></li>
+                    <li><a class="menu-item" href="#contact">./contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <section id="projects" class="projects-section py-20 bg-gray-50 dark:bg-gray-800">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">My GitHub Project</h2>
-            
-            <div class="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <a href="https://github.com/FebraS/PyAte" target="_blank" class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 block">
-                    <div class="card-header flex flex-col sm:flex-row justify-between sm:items-center mb-4">
-                        <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2 sm:mb-0">
-                            <i class="fab fa-github mr-2"></i> PyAte : Python Authenticator Token Extractor
-                        </h3>
-                        <span class="language bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-mono font-medium px-3 py-1 rounded-full self-start">Python</span>
-                    </div>
-                    <p class="text-gray-700 dark:text-gray-300 my-4 flex-grow">PYATE is a lightweight and efficient Command-Line Interface (CLI) application, written in Python, that acts as a replacement for Google Authenticator.</p>
-                    <div class="card-footer flex space-x-6 text-gray-600 dark:text-gray-400 text-sm font-mono">
-                        <span><i class="fas fa-star mr-1"></i> 9</span>
-                        <span><i class="fas fa-code-branch mr-1"></i> 1</span>
-                    </div>
-                </a>
+        <hr>
 
-                <a href="https://github.com/FebraS/ERANGA" target="_blank" class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 block">
-                    <div class="card-header flex flex-col sm:flex-row justify-between sm:items-center mb-4">
-                        <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2 sm:mb-0">
-                            <i class="fab fa-github mr-2"></i> ERANGA
-                        </h3>
-                        <span class="language bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-mono font-medium px-3 py-1 rounded-full self-start">JavaScript</span>
-                    </div>
-                    <p class="text-gray-700 dark:text-gray-300 my-4 flex-grow">A serverless online presence application built with Google Apps Script.</p>
-                    <div class="card-footer flex space-x-6 text-gray-600 dark:text-gray-400 text-sm font-mono">
-                        <span><i class="fas fa-star mr-1"></i> 2</span>
-                        <span><i class="fas fa-code-branch mr-1"></i> 0</span>
-                    </div>
-                </a>
-
-                <a href="https://github.com/FebraS/Dapodik-Auth-Retriever" target="_blank" class="project-card bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 block">
-                    <div class="card-header flex flex-col sm:flex-row justify-between sm:items-center mb-4">
-                        <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2 sm:mb-0">
-                            <i class="fab fa-github mr-2"></i> Dapodik Auth Retriever
-                        </h3>
-                        <span class="language bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-mono font-medium px-3 py-1 rounded-full self-start">Python</span>
-                    </div>
-                    <p class="text-gray-700 dark:text-gray-300 my-4 flex-grow">Dapodik Auth Retriever is a utility tool that helps authorized users to recover authentication credentials on the Dapodik system.</p>
-                    <div class="card-footer flex space-x-6 text-gray-600 dark:text-gray-400 text-sm font-mono">
-                        <span><i class="fas fa-star mr-1"></i> 2</span>
-                        <span><i class="fas fa-code-branch mr-1"></i> 0</span>
-                    </div>
-                </a>
-
-                </div>
-            
-            <div class="text-center mt-12">
-                <a href="https://github.com/FebraS" target="_blank" class="btn primary-btn inline-flex items-center py-3 px-8 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
-                    View All Projects on GitHub
-                    <i class="fas fa-external-link-alt ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about-section py-20">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
-            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                A passionate cybersecurity enthusiast with expertise in binary exploitation. I have a strong passion for understanding and mitigating cybersecurity vulnerabilities, and am committed to creating a safer digital world for everyone.
-            </sppan>
-        </div>
-    </section>
-
-    <section id="contact" class="cta-contact-section py-20 bg-blue-600 dark:bg-blue-700 text-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect!</h2>
-            <p class="text-lg text-blue-100 dark:text-blue-200 mb-8">
-                I'm always open to new projects, collaborations, or just discussing technology. 
-                <br>Feel free to contact me!
+        <section id="whoami">
+            <header>
+                <h2>> whoami</h2>
+            </header>
+            <p>
+                I am a <strong>Self-Taught Programmer</strong> and a <strong>Cyber Security Enthusiast</strong>. 
+                I don't have years of experience, but I have a high curiosity for how things work—and how they break. 
+                Currently, I am focusing on building automation scripts and learning the basics of penetration testing.
             </p>
-            <a href="mailto:sekda@febra.my.id" class="btn primary-btn inline-block py-3 px-8 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition duration-300">Send Email</a>
-        </div>
-    </section>
+        </section>
 
-    <footer class="py-10 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-600 dark:text-gray-400 mb-4 md:mb-0">&copy; 2025 Febra</p>
-            <div class="social-links flex space-x-6">
-                <a href="https://id.linkedin.com/in/febra" target="_blank" aria-label="LinkedIn" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white text-2xl transition-colors duration-300"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/FebraS" target="_blank" aria-label="GitHub" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white text-2xl transition-colors duration-300"><i class="fab fa-github"></i></a>
-                <a href="https://facebook.com/0xfeb" target="_blank" aria-label="Facebook" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white text-2xl transition-colors duration-300"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuIcon = document.getElementById('mobile-menu-icon');
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a.mobile-menu-link'); // Hanya link internal
-
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        <section id="apps">
+            <header>
+                <h2>> ls ./learning_projects</h2>
+            </header>
+            <p>Early-stage Python applications I've built while learning the language:</p>
             
+            <fieldset>
+                <legend><strong>PyAte</strong></legend>
+                <p>My personal project to replace Google Authenticator with a terminal-based tool. It focuses on simplicity and security, allowing me to manage 2FA tokens directly from my Linux terminal without relying on a smartphone.</p>
+                <small>Tech: Python, HMAC/OTP Logic</small>
+            </fieldset>
 
-            if (mobileMenu.classList.contains('hidden')) {
-                mobileMenuIcon.classList.remove('fa-times');
-                mobileMenuIcon.classList.add('fa-bars');
-            } else {
-                mobileMenuIcon.classList.remove('fa-bars');
-                mobileMenuIcon.classList.add('fa-times');
-            }
-        });
+            <fieldset>
+                <legend><strong>Dapodik Auth Retriever</strong></legend>
+                <p>A simple Python script I built to help authorized school staff get their Dapodik login tokens. I made this to make it easier to recover credentials when the usual way is too slow or difficult.</p>
+                <small>Tech: Python, Basic Automation</small>
+            </fieldset>
+        </section>
 
+        <section id="blog">
+        <header>
+            <h2>> ls ./blog_posts</h2>
+        </header>
+        <p>Sometimes I write about my security findings and challenges:</p>
 
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenuIcon.classList.remove('fa-times');
-                mobileMenuIcon.classList.add('fa-bars');
-            });
-        });
-    </script>
+        <ul>
+            <li>
+                <mark>[Malware]</mark> <strong>Wedding APK Analysis</strong> - 
+                A simple breakdown of how the 'Wedding Invitation.apk' scam works. 
+                <a href="https://blog.febra.web.id/2024/06/analisis-lebih-dalam-tentang-undangan-pernikahan-apk.html" target="_blank">./read_more</a>
+            </li>
+            <br>            
+            <li>
+                <mark>[Reverse Eng & Race Condition]</mark> <strong>Balapan Station Challenge</strong> - 
+                Learning how to exploit timing bugs and deconstruct internal software logic.
+                <a href="https://blog.febra.web.id/2024/08/skill-issue-challenge-stasiun-balapan.html" target="_blank">./read</a>
+            </li>
+            <br>
+            <li>
+                <mark>[OSINT]</mark> <strong>Death Bed Challenge</strong> - 
+                Finding a photo's real location using digital clues. 
+                <a href="https://blog.febra.web.id/2024/09/death-bed-challenge-petualangan-menemukan-lokasi-asli-sebuah-foto.html" target="_blank">./read_more</a>
+            </li>
+            <br>
+            <li>
+                <mark>[Bypass]</mark> <strong>CBT Browser Spoofing</strong> - 
+                Tricking test systems using User-Agent spoofing techniques. 
+                <a href="https://blog.febra.web.id/2024/06/mengelabui-mekanisme-pendeteksi-browser-cbt-dengan-user-agent-spoofing.html" target="_blank">./read_more</a>
+            </li>
+        </ul>
+        </section>
 
-    <script>
-        const themeToggleBtns = document.querySelectorAll('.theme-toggle'); 
-        const html = document.documentElement;
+        <section id="security">
+            <header>
+                <h2>> cat current_skills.log</h2>
+            </header>
+            <p>I am currently at an <strong>introductory level</strong> in the following areas:</p>
+            <ul>
+                <li><mark>Python Scripting</mark> - Writing basic logic to automate boring tasks.</li>
+                <li><mark>Linux CLI</mark> - Comfortable navigating the terminal and managing files.</li>
+                <li><mark>Security Labs</mark> - Solving beginner boxes on HackTheBox.</li>
+                <li><mark>Web Basics</mark> - Understanding HTTP requests and basic HTML structure.</li>
+            </ul>
+        </section>
 
+        <section id="contact">
+            <header>
+                <h2>> finger developer</h2>
+            </header>
+            <p>Open for learning opportunities, feedback on my code, or security discussions:</p>
+            <ul>
+                <li>Email: <a href="mailto:sekda@febra.web.id">sekda@febra.web.id</a></li>
+                <li>GitHub: <a href="https://github.com/FebraS">github.com/FebraS</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/febra">linkedin.com/in/febra</a></li>
+            </ul>
+        </section>
 
-        function setTheme(isDark) {
+        <hr>
 
-            const themeIcons = document.querySelectorAll('.theme-toggle i'); 
+        <footer>
+            <p>
+                <small>
+                    // Environment: <strong>HTML5</strong>, <strong>Terminal.css</strong> <br>
+                    // Status: <span style="color: #00ff00;">Active (Zero JavaScript)</span> | 2026
+                </small>
+            </p>
+        </footer>
+    </div>
 
-            if (isDark) {
-                html.classList.add('dark');
-                themeIcons.forEach(icon => {
-                    icon.classList.remove('fa-moon');
-                    icon.classList.add('fa-sun');
-                });
-                localStorage.setItem('theme', 'dark');
-            } else {
-                html.classList.remove('dark');
-                themeIcons.forEach(icon => {
-                    icon.classList.remove('fa-sun');
-                    icon.classList.add('fa-moon');
-                });
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        const savedTheme = localStorage.getItem('theme');
-        const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        if (savedTheme === 'dark' || (!savedTheme && userPrefersDark)) {
-            setTheme(true);
-        } else {
-            setTheme(false);
-        }
-
-        themeToggleBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                setTheme(!html.classList.contains('dark'));
-            });
-        });
-    </script>
 </body>
 </html>
